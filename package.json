@@ -5,10 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --fix",
+    "hasura:start": "docker-compose up -d",
+    "hasura": "cd ./hasura && hasura",
+    "hasura:console": "yarn hasura console",
+    "hasura:seeds": "yarn hasura seeds",
+    "hasura:dev": "yarn hasura:start && yarn hasura:console"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "tailwindcss": "^1.8.10",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.0-0"
   },
@@ -26,6 +32,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "hasura-cli": "^1.3.2",
     "typescript": "~3.9.3"
   }
 }

@@ -1,30 +1,43 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div
+    class="relative flex w-full h-screen overflow-hidden antialiased bg-gray-200"
+  >
+    <!-- left -->
+    <SideBar />
+
+    <!-- center -->
+    <Chat />
+
+    <!-- right -->
+    <transition
+      enter-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+      enter-class="translate-x-full"
+      enter-to-class="translate-x-0"
+      leave-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+      leave-class="translate-x-0"
+      leave-to-class="translate-x-full"
+    >
+      <Info v-show="showInfo" />
+    </transition>
   </div>
-  <router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+import SideBar from './components/SideBar.vue'
+import Chat from './components/Chat.vue'
+import Info from './components/Info.vue'
 
-#nav {
-  padding: 30px;
-}
+export default defineComponent({
+  components: { Info, Chat, SideBar },
+  setup() {
+    const showInfo = ref(false)
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    return {
+      showInfo,
+    }
+  },
+})
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style src="tailwindcss/tailwind.css" />
