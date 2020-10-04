@@ -1,0 +1,3 @@
+INSERT INTO public.messages (id, content, subscription_id, created_at, updated_at) VALUES ('0241079a-b1e8-4cc5-b7c5-6a9c6fff5401', 'test', '27bf7ae2-74a8-45b6-bdf3-11f281573c8f', '2020-10-04 16:20:21.248262+00', '2020-10-04 16:20:21.248262+00');
+INSERT INTO public.messages (id, content, subscription_id, created_at, updated_at) VALUES ('6265edf8-88d4-409c-974d-11bf24713a12', 'other', '7e70e334-e1a4-4c9d-8a91-dcb54492510e', '2020-10-04 16:20:21.248262+00', '2020-10-04 16:20:21.248262+00');
+INSERT INTO public.messages (id, content, subscription_id, created_at, updated_at) VALUES ('55270f0f-ef92-4ccc-9586-b002224aeb18', 'a **formated** message !', '7e70e334-e1a4-4c9d-8a91-dcb54492510e', '2020-10-04 16:20:21.248262+00', '2020-10-04 16:20:21.248262+00');

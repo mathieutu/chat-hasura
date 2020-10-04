@@ -1,0 +1,4 @@
+INSERT INTO public.subscriptions (id, user_id, channel_id, created_at) VALUES ('27bf7ae2-74a8-45b6-bdf3-11f281573c8f', '7b9323d4-c675-4120-ab89-b185ff490500', '0ebc0df7-6832-4bb4-87bb-33373c888ef7', '2020-10-04 16:57:01.411694+00');
+INSERT INTO public.subscriptions (id, user_id, channel_id, created_at) VALUES ('49478075-5baa-47ba-b90b-0a748ff5ab83', '7b9323d4-c675-4120-ab89-b185ff490500', 'db7e3e4a-391d-4dc9-94a4-638cc8609350', '2020-10-04 16:57:01.411694+00');
+INSERT INTO public.subscriptions (id, user_id, channel_id, created_at) VALUES ('7e70e334-e1a4-4c9d-8a91-dcb54492510e', 'ab77ce03-a39c-4321-bae6-f00e52d695fa', '0ebc0df7-6832-4bb4-87bb-33373c888ef7', '2020-10-04 16:57:01.411694+00');
+INSERT INTO public.subscriptions (id, user_id, channel_id, created_at) VALUES ('a3728e39-413d-4dd4-bdc2-f11d36b899ac', 'ab77ce03-a39c-4321-bae6-f00e52d695fa', '5fab1f00-483f-4d5b-9fb6-70b381d6a882', '2020-10-04 16:57:01.411694+00');

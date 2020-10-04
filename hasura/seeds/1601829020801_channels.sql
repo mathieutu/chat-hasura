@@ -1,0 +1,3 @@
+INSERT INTO public.channels (id, name, description, created_at, updated_at) VALUES ('0ebc0df7-6832-4bb4-87bb-33373c888ef7', 'general', NULL, '2020-10-04 15:03:53.158366+00', '2020-10-04 15:03:53.158366+00');
+INSERT INTO public.channels (id, name, description, created_at, updated_at) VALUES ('5fab1f00-483f-4d5b-9fb6-70b381d6a882', 'random', NULL, '2020-10-04 15:03:58.037188+00', '2020-10-04 15:03:58.037188+00');
+INSERT INTO public.channels (id, name, description, created_at, updated_at) VALUES ('db7e3e4a-391d-4dc9-94a4-638cc8609350', 'test', NULL, '2020-10-04 15:04:07.370056+00', '2020-10-04 15:04:07.370056+00');

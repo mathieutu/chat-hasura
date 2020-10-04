@@ -1,0 +1,2 @@
+INSERT INTO public.users (id, username, first_name, last_name, email, created_at, updated_at) VALUES ('ab77ce03-a39c-4321-bae6-f00e52d695fa', 'mathieutu', 'Mathieu', 'TUDISCO', 'mathieu@tu', '2020-10-04 15:03:20.617136+00', '2020-10-04 15:03:20.617136+00');
+INSERT INTO public.users (id, username, first_name, last_name, email, created_at, updated_at) VALUES ('7b9323d4-c675-4120-ab89-b185ff490500', 'foo', 'Foo', 'BAR', 'foo@bar', '2020-10-04 15:03:40.009641+00', '2020-10-04 15:03:40.009641+00');
