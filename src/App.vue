@@ -10,12 +10,12 @@
 
     <!-- right -->
     <transition
-      enter-active-class="transform transition ease-in-out duration-500 sm:duration-700"
-      enter-class="translate-x-full"
-      enter-to-class="translate-x-0"
-      leave-active-class="transform transition ease-in-out duration-500 sm:duration-700"
-      leave-class="translate-x-0"
-      leave-to-class="translate-x-full"
+      enterActiveClass="transform transition ease-in-out duration-500 sm:duration-700"
+      enterClass="translate-x-full"
+      enterToClass="translate-x-0"
+      leaveActiveClass="transform transition ease-in-out duration-500 sm:duration-700"
+      leaveClass="translate-x-0"
+      leaveToClass="translate-x-full"
     >
       <Info v-show="showInfo" />
     </transition>
@@ -24,6 +24,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import { provideStore } from '@/store'
 import SideBar from './components/SideBar.vue'
 import Chat from './components/Chat.vue'
 import Info from './components/Info.vue'
@@ -32,6 +33,8 @@ export default defineComponent({
   components: { Info, Chat, SideBar },
   setup() {
     const showInfo = ref(false)
+
+    provideStore()
 
     return {
       showInfo,

@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable global-require, @typescript-eslint/no-var-requires, import/no-extraneous-dependencies */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -18,6 +18,9 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    require('@tailwindcss/ui'),
+  ],
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
