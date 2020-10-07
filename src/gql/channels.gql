@@ -1,0 +1,8 @@
+query listChannels {
+    channels {
+        name,
+        description,
+        id,
+        updatedAt: updated_at
+    }
+}

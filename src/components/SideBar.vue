@@ -13,29 +13,59 @@
 import SideBarTabs from '@/components/SideBarTabs.vue'
 import Channels from '@/components/ChannelsList.vue'
 import { computed, ref } from 'vue'
-import { channels, users } from '@/data/channels'
+import { Channel, channels } from '@/data/channels'
 import NewConversationButton from '@/components/NewConversationButton.vue'
 import SideBarHeader from '@/components/SideBarHeader.vue'
 import { useStore } from '@/store'
+import { ListChannelsDocument, ListChannelsQuery, ListUsersDocument, ListUsersQuery } from '@/gql'
+import { formatDistanceToNow, parseApi } from '@/utils/date'
+import { useQuery } from '@vue/apollo-composable'
+import { compact } from 'ramda-adjunct'
 
 const tabs = {
-  channels: { title: 'Channels', notifCount: 0, list: channels },
-  users: { title: 'Utilisateurs', notifCount: 12, list: users },
+  channels: { title: 'Channels', notifCount: 0 },
+  users: { title: 'Utilisateurs', notifCount: 12 },
 }
 
 export default {
   name: 'SideBar',
-  components: {
-    SideBarHeader, NewConversationButton, Channels, SideBarTabs,
-  },
+  components: { SideBarHeader, NewConversationButton, Channels, SideBarTabs },
   setup() {
     const selectedTab = ref<keyof typeof tabs>('channels')
-    const list = computed(() => tabs[selectedTab.value].list)
     const { sideBarIsShown, toggleSideBar } = useStore()
+
+    const query = computed(() => (
+      selectedTab.value === 'channels'
+        ? ListChannelsDocument
+        : ListUsersDocument
+    ))
+
+    const { result } = useQuery<ListUsersQuery | ListChannelsQuery>(query)
+
+    const list = computed<Channel[]>(() => {
+      if (!result.value) {
+        return []
+      }
+
+      if ('channels' in result.value) {
+        return result.value.channels.map(({ updatedAt, name, description }) => compact({
+          name: `#${name}`,
+          description,
+          time: formatDistanceToNow(parseApi(updatedAt)),
+        }))
+      }
+
+      return result.value.users.map(({ lastName, firstName, username, updatedAt }) => ({
+        name: `@${username}`,
+        description: `${firstName} ${lastName}`,
+        time: formatDistanceToNow(parseApi(updatedAt)),
+        pictureUrl: `https://unavatar.now.sh/${username}`,
+      }))
+    })
+
     return {
-      selectedTab,
       list,
-      users,
+      selectedTab,
       tabs,
       sideBarIsShown,
       toggleSideBar,

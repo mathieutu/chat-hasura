@@ -1,6 +1,4 @@
-import {
-  InjectionKey, onMounted, provide, ref, Ref, watch, inject,
-} from 'vue'
+import { onMounted, ref, Ref, watch, watchEffect } from 'vue'
 
 export const useToggle = (initial = false) => {
   const bool = ref(initial)
@@ -43,3 +41,5 @@ export const resizeTextAreaDependingOfContent = (content: Ref<string>, maxRows: 
 
   return textAreaRef
 }
+
+export const useLog = (fn: Function) => watchEffect(() => console.log(fn()))

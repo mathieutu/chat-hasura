@@ -1,0 +1,9 @@
+query listUsers {
+    users {
+        firstName: first_name,
+        lastName: last_name,
+        username,
+        id,
+        updatedAt: updated_at,
+    }
+}

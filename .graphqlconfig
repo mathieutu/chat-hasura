@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "chat": {
+      "name": "Hasura",
+      "schemaPath": "hasura/schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "Hasura Dev": {
+            "url": "http://localhost:8081/v1/graphql",
+            "introspect": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,10 @@
-import { inject, provide, readonly, InjectionKey } from 'vue'
+import {
+  inject, provide, readonly, InjectionKey,
+} from 'vue'
 import { useToggle } from '@/hooks'
 
 const createStore = () => {
-  const [sideBarIsShown, toggleSideBar] = useToggle()
-
+  const [sideBarIsShown, toggleSideBar] = useToggle(true)
 
   return {
     toggleSideBar,

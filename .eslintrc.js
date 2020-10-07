@@ -8,6 +8,9 @@ module.exports = {
     '@vue/airbnb',
     '@vue/typescript/recommended',
   ],
+  plugins: [
+    // 'graphql',
+  ],
   parserOptions: {
     ecmaVersion: 2020,
   },
@@ -22,5 +25,7 @@ module.exports = {
     }],
     'vue/custom-event-name-casing': 'off',
     'vue/attribute-hyphenation': ['error', 'never'],
+    'object-curly-newline': ["error", { "multiline": true }],
+    // 'graphql/template-strings': ['error', { env: 'literal' }],
   },
 }
