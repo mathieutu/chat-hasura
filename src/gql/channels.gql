@@ -1,8 +1,27 @@
 query listChannels {
-    channels {
-        name,
-        description,
-        id,
-        updatedAt: updated_at
+  channels {
+    name,
+    description,
+    id,
+    updatedAt
+  }
+}
+
+query findChannel($id: uuid!) {
+  channel: channels_by_pk(id: $id) {
+    id,
+    name,
+    updatedAt,
+    messages {
+      id,
+      content,
+      createdAt,
+      user {
+        firstName
+        lastName
+        username
+      }
     }
+
+  }
 }

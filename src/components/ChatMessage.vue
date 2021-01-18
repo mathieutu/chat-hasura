@@ -10,7 +10,7 @@
 export default {
   name: 'ChatMessage',
   props: {
-    message: {
+    content: {
       type: String,
       required: true,
     },

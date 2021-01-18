@@ -19,7 +19,7 @@ export type Scalars = {
 /** columns and relationships of "channels" */
 export type Channels = {
   __typename?: 'channels';
-  created_at: Scalars['timestamptz'];
+  createdAt: Scalars['timestamptz'];
   description?: Maybe<Scalars['String']>;
   id: Scalars['uuid'];
   /** An array relationship */
@@ -31,7 +31,7 @@ export type Channels = {
   subscriptions: Array<Subscriptions>;
   /** An aggregated array relationship */
   subscriptions_aggregate: Subscriptions_Aggregate;
-  updated_at: Scalars['timestamptz'];
+  updatedAt: Scalars['timestamptz'];
   /** An array relationship */
   users: Array<Relation_Channel_Users>;
   /** An aggregated array relationship */
@@ -123,21 +123,21 @@ export type Channels_Aggregate_FieldsCountArgs = {
 /** aggregate max on columns */
 export type Channels_Max_Fields = {
   __typename?: 'channels_max_fields';
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   description?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** aggregate min on columns */
 export type Channels_Min_Fields = {
   __typename?: 'channels_min_fields';
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   description?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** response of any mutation on the table "channels" */
@@ -153,12 +153,12 @@ export type Channels_Mutation_Response = {
 export type Messages = {
   __typename?: 'messages';
   content: Scalars['String'];
-  created_at: Scalars['timestamptz'];
+  createdAt: Scalars['timestamptz'];
   id: Scalars['uuid'];
   /** An object relationship */
   subscription: Subscriptions;
-  subscription_id: Scalars['uuid'];
-  updated_at: Scalars['timestamptz'];
+  subscriptionId: Scalars['uuid'];
+  updatedAt: Scalars['timestamptz'];
 };
 
 /** aggregated selection of "messages" */
@@ -187,20 +187,20 @@ export type Messages_Aggregate_FieldsCountArgs = {
 export type Messages_Max_Fields = {
   __typename?: 'messages_max_fields';
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  subscription_id?: Maybe<Scalars['uuid']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  subscriptionId?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** aggregate min on columns */
 export type Messages_Min_Fields = {
   __typename?: 'messages_min_fields';
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  subscription_id?: Maybe<Scalars['uuid']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  subscriptionId?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** response of any mutation on the table "messages" */
@@ -635,15 +635,15 @@ export type Relation_Channel_User_Messages = {
   __typename?: 'relation_channel_user_messages';
   /** An object relationship */
   channel?: Maybe<Channels>;
-  channel_id?: Maybe<Scalars['uuid']>;
+  channelId?: Maybe<Scalars['uuid']>;
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  subscription_id?: Maybe<Scalars['uuid']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  subscriptionId?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   /** An object relationship */
   user?: Maybe<Users>;
-  user_id?: Maybe<Scalars['uuid']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** aggregated selection of "relation_channel_user_messages" */
@@ -671,41 +671,41 @@ export type Relation_Channel_User_Messages_Aggregate_FieldsCountArgs = {
 /** aggregate max on columns */
 export type Relation_Channel_User_Messages_Max_Fields = {
   __typename?: 'relation_channel_user_messages_max_fields';
-  channel_id?: Maybe<Scalars['uuid']>;
+  channelId?: Maybe<Scalars['uuid']>;
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  subscription_id?: Maybe<Scalars['uuid']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  subscriptionId?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** aggregate min on columns */
 export type Relation_Channel_User_Messages_Min_Fields = {
   __typename?: 'relation_channel_user_messages_min_fields';
-  channel_id?: Maybe<Scalars['uuid']>;
+  channelId?: Maybe<Scalars['uuid']>;
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  subscription_id?: Maybe<Scalars['uuid']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  subscriptionId?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** columns and relationships of "relation_channel_users" */
 export type Relation_Channel_Users = {
   __typename?: 'relation_channel_users';
-  channel_id?: Maybe<Scalars['uuid']>;
+  channelId?: Maybe<Scalars['uuid']>;
   /** An array relationship */
   channels: Array<Relation_User_Channels>;
   /** An aggregated array relationship */
   channels_aggregate: Relation_User_Channels_Aggregate;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   email?: Maybe<Scalars['String']>;
   first_name?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   last_name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   username?: Maybe<Scalars['String']>;
 };
 
@@ -754,38 +754,38 @@ export type Relation_Channel_Users_Aggregate_FieldsCountArgs = {
 /** aggregate max on columns */
 export type Relation_Channel_Users_Max_Fields = {
   __typename?: 'relation_channel_users_max_fields';
-  channel_id?: Maybe<Scalars['uuid']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  channelId?: Maybe<Scalars['uuid']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   email?: Maybe<Scalars['String']>;
   first_name?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   last_name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   username?: Maybe<Scalars['String']>;
 };
 
 /** aggregate min on columns */
 export type Relation_Channel_Users_Min_Fields = {
   __typename?: 'relation_channel_users_min_fields';
-  channel_id?: Maybe<Scalars['uuid']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  channelId?: Maybe<Scalars['uuid']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   email?: Maybe<Scalars['String']>;
   first_name?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   last_name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   username?: Maybe<Scalars['String']>;
 };
 
 /** columns and relationships of "relation_user_channels" */
 export type Relation_User_Channels = {
   __typename?: 'relation_user_channels';
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   description?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+  userId?: Maybe<Scalars['uuid']>;
   /** An array relationship */
   users: Array<Relation_Channel_Users>;
   /** An aggregated array relationship */
@@ -837,23 +837,23 @@ export type Relation_User_Channels_Aggregate_FieldsCountArgs = {
 /** aggregate max on columns */
 export type Relation_User_Channels_Max_Fields = {
   __typename?: 'relation_user_channels_max_fields';
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   description?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** aggregate min on columns */
 export type Relation_User_Channels_Min_Fields = {
   __typename?: 'relation_user_channels_min_fields';
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   description?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** subscription root */
@@ -1066,8 +1066,8 @@ export type Subscriptions = {
   __typename?: 'subscriptions';
   /** An object relationship */
   channel: Channels;
-  channel_id: Scalars['uuid'];
-  created_at: Scalars['timestamptz'];
+  channelId: Scalars['uuid'];
+  createdAt: Scalars['timestamptz'];
   id: Scalars['uuid'];
   /** An array relationship */
   messages: Array<Messages>;
@@ -1075,7 +1075,7 @@ export type Subscriptions = {
   messages_aggregate: Messages_Aggregate;
   /** An object relationship */
   user: Users;
-  user_id: Scalars['uuid'];
+  userId: Scalars['uuid'];
 };
 
 
@@ -1123,19 +1123,19 @@ export type Subscriptions_Aggregate_FieldsCountArgs = {
 /** aggregate max on columns */
 export type Subscriptions_Max_Fields = {
   __typename?: 'subscriptions_max_fields';
-  channel_id?: Maybe<Scalars['uuid']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  channelId?: Maybe<Scalars['uuid']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** aggregate min on columns */
 export type Subscriptions_Min_Fields = {
   __typename?: 'subscriptions_min_fields';
-  channel_id?: Maybe<Scalars['uuid']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  channelId?: Maybe<Scalars['uuid']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** response of any mutation on the table "subscriptions" */
@@ -1154,11 +1154,11 @@ export type Users = {
   channels: Array<Relation_User_Channels>;
   /** An aggregated array relationship */
   channels_aggregate: Relation_User_Channels_Aggregate;
-  created_at: Scalars['timestamptz'];
+  createdAt: Scalars['timestamptz'];
   email: Scalars['String'];
-  first_name: Scalars['String'];
+  firstName: Scalars['String'];
   id: Scalars['uuid'];
-  last_name: Scalars['String'];
+  lastName: Scalars['String'];
   /** An array relationship */
   messages: Array<Relation_Channel_User_Messages>;
   /** An aggregated array relationship */
@@ -1167,7 +1167,7 @@ export type Users = {
   subscriptions: Array<Subscriptions>;
   /** An aggregated array relationship */
   subscriptions_aggregate: Subscriptions_Aggregate;
-  updated_at: Scalars['timestamptz'];
+  updatedAt: Scalars['timestamptz'];
   username: Scalars['String'];
 };
 
@@ -1256,24 +1256,24 @@ export type Users_Aggregate_FieldsCountArgs = {
 /** aggregate max on columns */
 export type Users_Max_Fields = {
   __typename?: 'users_max_fields';
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   email?: Maybe<Scalars['String']>;
-  first_name?: Maybe<Scalars['String']>;
+  firstName?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
-  last_name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  lastName?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   username?: Maybe<Scalars['String']>;
 };
 
 /** aggregate min on columns */
 export type Users_Min_Fields = {
   __typename?: 'users_min_fields';
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   email?: Maybe<Scalars['String']>;
-  first_name?: Maybe<Scalars['String']>;
+  firstName?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
-  last_name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  lastName?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   username?: Maybe<Scalars['String']>;
 };
 
@@ -1297,7 +1297,7 @@ export enum Channels_Constraint {
 /** select columns of table "channels" */
 export enum Channels_Select_Column {
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Description = 'description',
   /** column name */
@@ -1305,13 +1305,13 @@ export enum Channels_Select_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updatedAt'
 }
 
 /** update columns of table "channels" */
 export enum Channels_Update_Column {
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Description = 'description',
   /** column name */
@@ -1319,7 +1319,7 @@ export enum Channels_Update_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updatedAt'
 }
 
 /** unique or primary key constraints on table "messages" */
@@ -1333,13 +1333,13 @@ export enum Messages_Select_Column {
   /** column name */
   Content = 'content',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Id = 'id',
   /** column name */
-  SubscriptionId = 'subscription_id',
+  SubscriptionId = 'subscriptionId',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updatedAt'
 }
 
 /** update columns of table "messages" */
@@ -1347,13 +1347,13 @@ export enum Messages_Update_Column {
   /** column name */
   Content = 'content',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Id = 'id',
   /** column name */
-  SubscriptionId = 'subscription_id',
+  SubscriptionId = 'subscriptionId',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updatedAt'
 }
 
 /** column ordering options */
@@ -1375,27 +1375,27 @@ export enum Order_By {
 /** select columns of table "relation_channel_user_messages" */
 export enum Relation_Channel_User_Messages_Select_Column {
   /** column name */
-  ChannelId = 'channel_id',
+  ChannelId = 'channelId',
   /** column name */
   Content = 'content',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Id = 'id',
   /** column name */
-  SubscriptionId = 'subscription_id',
+  SubscriptionId = 'subscriptionId',
   /** column name */
-  UpdatedAt = 'updated_at',
+  UpdatedAt = 'updatedAt',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'userId'
 }
 
 /** select columns of table "relation_channel_users" */
 export enum Relation_Channel_Users_Select_Column {
   /** column name */
-  ChannelId = 'channel_id',
+  ChannelId = 'channelId',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Email = 'email',
   /** column name */
@@ -1405,7 +1405,7 @@ export enum Relation_Channel_Users_Select_Column {
   /** column name */
   LastName = 'last_name',
   /** column name */
-  UpdatedAt = 'updated_at',
+  UpdatedAt = 'updatedAt',
   /** column name */
   Username = 'username'
 }
@@ -1413,7 +1413,7 @@ export enum Relation_Channel_Users_Select_Column {
 /** select columns of table "relation_user_channels" */
 export enum Relation_User_Channels_Select_Column {
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Description = 'description',
   /** column name */
@@ -1421,9 +1421,9 @@ export enum Relation_User_Channels_Select_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  UpdatedAt = 'updated_at',
+  UpdatedAt = 'updatedAt',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'userId'
 }
 
 /** unique or primary key constraints on table "subscriptions" */
@@ -1437,25 +1437,25 @@ export enum Subscriptions_Constraint {
 /** select columns of table "subscriptions" */
 export enum Subscriptions_Select_Column {
   /** column name */
-  ChannelId = 'channel_id',
+  ChannelId = 'channelId',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Id = 'id',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'userId'
 }
 
 /** update columns of table "subscriptions" */
 export enum Subscriptions_Update_Column {
   /** column name */
-  ChannelId = 'channel_id',
+  ChannelId = 'channelId',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Id = 'id',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'userId'
 }
 
 /** unique or primary key constraints on table "users" */
@@ -1471,17 +1471,17 @@ export enum Users_Constraint {
 /** select columns of table "users" */
 export enum Users_Select_Column {
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Email = 'email',
   /** column name */
-  FirstName = 'first_name',
+  FirstName = 'firstName',
   /** column name */
   Id = 'id',
   /** column name */
-  LastName = 'last_name',
+  LastName = 'lastName',
   /** column name */
-  UpdatedAt = 'updated_at',
+  UpdatedAt = 'updatedAt',
   /** column name */
   Username = 'username'
 }
@@ -1489,17 +1489,17 @@ export enum Users_Select_Column {
 /** update columns of table "users" */
 export enum Users_Update_Column {
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Email = 'email',
   /** column name */
-  FirstName = 'first_name',
+  FirstName = 'firstName',
   /** column name */
   Id = 'id',
   /** column name */
-  LastName = 'last_name',
+  LastName = 'lastName',
   /** column name */
-  UpdatedAt = 'updated_at',
+  UpdatedAt = 'updatedAt',
   /** column name */
   Username = 'username'
 }
@@ -1541,42 +1541,42 @@ export type Channels_Bool_Exp = {
   _and?: Maybe<Array<Maybe<Channels_Bool_Exp>>>;
   _not?: Maybe<Channels_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Channels_Bool_Exp>>>;
-  created_at?: Maybe<Timestamptz_Comparison_Exp>;
+  createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   description?: Maybe<String_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
   messages?: Maybe<Relation_Channel_User_Messages_Bool_Exp>;
   name?: Maybe<String_Comparison_Exp>;
   subscriptions?: Maybe<Subscriptions_Bool_Exp>;
-  updated_at?: Maybe<Timestamptz_Comparison_Exp>;
+  updatedAt?: Maybe<Timestamptz_Comparison_Exp>;
   users?: Maybe<Relation_Channel_Users_Bool_Exp>;
 };
 
 /** input type for inserting data into table "channels" */
 export type Channels_Insert_Input = {
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   description?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   name?: Maybe<Scalars['String']>;
   subscriptions?: Maybe<Subscriptions_Arr_Rel_Insert_Input>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by max() on columns of table "channels" */
 export type Channels_Max_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   description?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
 };
 
 /** order by min() on columns of table "channels" */
 export type Channels_Min_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   description?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
 };
 
 /** input type for inserting object relation for remote table "channels" */
@@ -1594,13 +1594,13 @@ export type Channels_On_Conflict = {
 
 /** ordering options when selecting data from "channels" */
 export type Channels_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   description?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   messages_aggregate?: Maybe<Relation_Channel_User_Messages_Aggregate_Order_By>;
   name?: Maybe<Order_By>;
   subscriptions_aggregate?: Maybe<Subscriptions_Aggregate_Order_By>;
-  updated_at?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   users_aggregate?: Maybe<Relation_Channel_Users_Aggregate_Order_By>;
 };
 
@@ -1611,11 +1611,11 @@ export type Channels_Pk_Columns_Input = {
 
 /** input type for updating data in table "channels" */
 export type Channels_Set_Input = {
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   description?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
   name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by aggregate values of table "messages" */
@@ -1637,39 +1637,39 @@ export type Messages_Bool_Exp = {
   _not?: Maybe<Messages_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Messages_Bool_Exp>>>;
   content?: Maybe<String_Comparison_Exp>;
-  created_at?: Maybe<Timestamptz_Comparison_Exp>;
+  createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
   subscription?: Maybe<Subscriptions_Bool_Exp>;
-  subscription_id?: Maybe<Uuid_Comparison_Exp>;
-  updated_at?: Maybe<Timestamptz_Comparison_Exp>;
+  subscriptionId?: Maybe<Uuid_Comparison_Exp>;
+  updatedAt?: Maybe<Timestamptz_Comparison_Exp>;
 };
 
 /** input type for inserting data into table "messages" */
 export type Messages_Insert_Input = {
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
   subscription?: Maybe<Subscriptions_Obj_Rel_Insert_Input>;
-  subscription_id?: Maybe<Scalars['uuid']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  subscriptionId?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by max() on columns of table "messages" */
 export type Messages_Max_Order_By = {
   content?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  subscription_id?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  subscriptionId?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
 };
 
 /** order by min() on columns of table "messages" */
 export type Messages_Min_Order_By = {
   content?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  subscription_id?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  subscriptionId?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
 };
 
 /** input type for inserting object relation for remote table "messages" */
@@ -1688,11 +1688,11 @@ export type Messages_On_Conflict = {
 /** ordering options when selecting data from "messages" */
 export type Messages_Order_By = {
   content?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   subscription?: Maybe<Subscriptions_Order_By>;
-  subscription_id?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  subscriptionId?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
 };
 
 /** primary key columns input for table: "messages" */
@@ -1703,10 +1703,10 @@ export type Messages_Pk_Columns_Input = {
 /** input type for updating data in table "messages" */
 export type Messages_Set_Input = {
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  subscription_id?: Maybe<Scalars['uuid']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  subscriptionId?: Maybe<Scalars['uuid']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
 };
 
 /** order by aggregate values of table "relation_channel_user_messages" */
@@ -1722,49 +1722,49 @@ export type Relation_Channel_User_Messages_Bool_Exp = {
   _not?: Maybe<Relation_Channel_User_Messages_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Relation_Channel_User_Messages_Bool_Exp>>>;
   channel?: Maybe<Channels_Bool_Exp>;
-  channel_id?: Maybe<Uuid_Comparison_Exp>;
+  channelId?: Maybe<Uuid_Comparison_Exp>;
   content?: Maybe<String_Comparison_Exp>;
-  created_at?: Maybe<Timestamptz_Comparison_Exp>;
+  createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
-  subscription_id?: Maybe<Uuid_Comparison_Exp>;
-  updated_at?: Maybe<Timestamptz_Comparison_Exp>;
+  subscriptionId?: Maybe<Uuid_Comparison_Exp>;
+  updatedAt?: Maybe<Timestamptz_Comparison_Exp>;
   user?: Maybe<Users_Bool_Exp>;
-  user_id?: Maybe<Uuid_Comparison_Exp>;
+  userId?: Maybe<Uuid_Comparison_Exp>;
 };
 
 /** order by max() on columns of table "relation_channel_user_messages" */
 export type Relation_Channel_User_Messages_Max_Order_By = {
-  channel_id?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
   content?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  subscription_id?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
-  user_id?: Maybe<Order_By>;
+  subscriptionId?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** order by min() on columns of table "relation_channel_user_messages" */
 export type Relation_Channel_User_Messages_Min_Order_By = {
-  channel_id?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
   content?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  subscription_id?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
-  user_id?: Maybe<Order_By>;
+  subscriptionId?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** ordering options when selecting data from "relation_channel_user_messages" */
 export type Relation_Channel_User_Messages_Order_By = {
   channel?: Maybe<Channels_Order_By>;
-  channel_id?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
   content?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  subscription_id?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  subscriptionId?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   user?: Maybe<Users_Order_By>;
-  user_id?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** order by aggregate values of table "relation_channel_users" */
@@ -1779,51 +1779,51 @@ export type Relation_Channel_Users_Bool_Exp = {
   _and?: Maybe<Array<Maybe<Relation_Channel_Users_Bool_Exp>>>;
   _not?: Maybe<Relation_Channel_Users_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Relation_Channel_Users_Bool_Exp>>>;
-  channel_id?: Maybe<Uuid_Comparison_Exp>;
+  channelId?: Maybe<Uuid_Comparison_Exp>;
   channels?: Maybe<Relation_User_Channels_Bool_Exp>;
-  created_at?: Maybe<Timestamptz_Comparison_Exp>;
+  createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   email?: Maybe<String_Comparison_Exp>;
   first_name?: Maybe<String_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
   last_name?: Maybe<String_Comparison_Exp>;
-  updated_at?: Maybe<Timestamptz_Comparison_Exp>;
+  updatedAt?: Maybe<Timestamptz_Comparison_Exp>;
   username?: Maybe<String_Comparison_Exp>;
 };
 
 /** order by max() on columns of table "relation_channel_users" */
 export type Relation_Channel_Users_Max_Order_By = {
-  channel_id?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   email?: Maybe<Order_By>;
   first_name?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   last_name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   username?: Maybe<Order_By>;
 };
 
 /** order by min() on columns of table "relation_channel_users" */
 export type Relation_Channel_Users_Min_Order_By = {
-  channel_id?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   email?: Maybe<Order_By>;
   first_name?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   last_name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   username?: Maybe<Order_By>;
 };
 
 /** ordering options when selecting data from "relation_channel_users" */
 export type Relation_Channel_Users_Order_By = {
-  channel_id?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
   channels_aggregate?: Maybe<Relation_User_Channels_Aggregate_Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   email?: Maybe<Order_By>;
   first_name?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   last_name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   username?: Maybe<Order_By>;
 };
 
@@ -1839,43 +1839,43 @@ export type Relation_User_Channels_Bool_Exp = {
   _and?: Maybe<Array<Maybe<Relation_User_Channels_Bool_Exp>>>;
   _not?: Maybe<Relation_User_Channels_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Relation_User_Channels_Bool_Exp>>>;
-  created_at?: Maybe<Timestamptz_Comparison_Exp>;
+  createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   description?: Maybe<String_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
   name?: Maybe<String_Comparison_Exp>;
-  updated_at?: Maybe<Timestamptz_Comparison_Exp>;
-  user_id?: Maybe<Uuid_Comparison_Exp>;
+  updatedAt?: Maybe<Timestamptz_Comparison_Exp>;
+  userId?: Maybe<Uuid_Comparison_Exp>;
   users?: Maybe<Relation_Channel_Users_Bool_Exp>;
 };
 
 /** order by max() on columns of table "relation_user_channels" */
 export type Relation_User_Channels_Max_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   description?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
-  user_id?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** order by min() on columns of table "relation_user_channels" */
 export type Relation_User_Channels_Min_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   description?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
-  user_id?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** ordering options when selecting data from "relation_user_channels" */
 export type Relation_User_Channels_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   description?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
-  user_id?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
   users_aggregate?: Maybe<Relation_Channel_Users_Aggregate_Order_By>;
 };
 
@@ -1898,39 +1898,39 @@ export type Subscriptions_Bool_Exp = {
   _not?: Maybe<Subscriptions_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Subscriptions_Bool_Exp>>>;
   channel?: Maybe<Channels_Bool_Exp>;
-  channel_id?: Maybe<Uuid_Comparison_Exp>;
-  created_at?: Maybe<Timestamptz_Comparison_Exp>;
+  channelId?: Maybe<Uuid_Comparison_Exp>;
+  createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
   messages?: Maybe<Messages_Bool_Exp>;
   user?: Maybe<Users_Bool_Exp>;
-  user_id?: Maybe<Uuid_Comparison_Exp>;
+  userId?: Maybe<Uuid_Comparison_Exp>;
 };
 
 /** input type for inserting data into table "subscriptions" */
 export type Subscriptions_Insert_Input = {
   channel?: Maybe<Channels_Obj_Rel_Insert_Input>;
-  channel_id?: Maybe<Scalars['uuid']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  channelId?: Maybe<Scalars['uuid']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
   messages?: Maybe<Messages_Arr_Rel_Insert_Input>;
   user?: Maybe<Users_Obj_Rel_Insert_Input>;
-  user_id?: Maybe<Scalars['uuid']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** order by max() on columns of table "subscriptions" */
 export type Subscriptions_Max_Order_By = {
-  channel_id?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  user_id?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** order by min() on columns of table "subscriptions" */
 export type Subscriptions_Min_Order_By = {
-  channel_id?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  user_id?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** input type for inserting object relation for remote table "subscriptions" */
@@ -1949,12 +1949,12 @@ export type Subscriptions_On_Conflict = {
 /** ordering options when selecting data from "subscriptions" */
 export type Subscriptions_Order_By = {
   channel?: Maybe<Channels_Order_By>;
-  channel_id?: Maybe<Order_By>;
-  created_at?: Maybe<Order_By>;
+  channelId?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   messages_aggregate?: Maybe<Messages_Aggregate_Order_By>;
   user?: Maybe<Users_Order_By>;
-  user_id?: Maybe<Order_By>;
+  userId?: Maybe<Order_By>;
 };
 
 /** primary key columns input for table: "subscriptions" */
@@ -1964,10 +1964,10 @@ export type Subscriptions_Pk_Columns_Input = {
 
 /** input type for updating data in table "subscriptions" */
 export type Subscriptions_Set_Input = {
-  channel_id?: Maybe<Scalars['uuid']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  channelId?: Maybe<Scalars['uuid']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  user_id?: Maybe<Scalars['uuid']>;
+  userId?: Maybe<Scalars['uuid']>;
 };
 
 /** expression to compare columns of type timestamptz. All fields are combined with logical 'AND'. */
@@ -2002,48 +2002,48 @@ export type Users_Bool_Exp = {
   _not?: Maybe<Users_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Users_Bool_Exp>>>;
   channels?: Maybe<Relation_User_Channels_Bool_Exp>;
-  created_at?: Maybe<Timestamptz_Comparison_Exp>;
+  createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   email?: Maybe<String_Comparison_Exp>;
-  first_name?: Maybe<String_Comparison_Exp>;
+  firstName?: Maybe<String_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
-  last_name?: Maybe<String_Comparison_Exp>;
+  lastName?: Maybe<String_Comparison_Exp>;
   messages?: Maybe<Relation_Channel_User_Messages_Bool_Exp>;
   subscriptions?: Maybe<Subscriptions_Bool_Exp>;
-  updated_at?: Maybe<Timestamptz_Comparison_Exp>;
+  updatedAt?: Maybe<Timestamptz_Comparison_Exp>;
   username?: Maybe<String_Comparison_Exp>;
 };
 
 /** input type for inserting data into table "users" */
 export type Users_Insert_Input = {
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   email?: Maybe<Scalars['String']>;
-  first_name?: Maybe<Scalars['String']>;
+  firstName?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
-  last_name?: Maybe<Scalars['String']>;
+  lastName?: Maybe<Scalars['String']>;
   subscriptions?: Maybe<Subscriptions_Arr_Rel_Insert_Input>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   username?: Maybe<Scalars['String']>;
 };
 
 /** order by max() on columns of table "users" */
 export type Users_Max_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   email?: Maybe<Order_By>;
-  first_name?: Maybe<Order_By>;
+  firstName?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  last_name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  lastName?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   username?: Maybe<Order_By>;
 };
 
 /** order by min() on columns of table "users" */
 export type Users_Min_Order_By = {
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   email?: Maybe<Order_By>;
-  first_name?: Maybe<Order_By>;
+  firstName?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  last_name?: Maybe<Order_By>;
-  updated_at?: Maybe<Order_By>;
+  lastName?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   username?: Maybe<Order_By>;
 };
 
@@ -2063,14 +2063,14 @@ export type Users_On_Conflict = {
 /** ordering options when selecting data from "users" */
 export type Users_Order_By = {
   channels_aggregate?: Maybe<Relation_User_Channels_Aggregate_Order_By>;
-  created_at?: Maybe<Order_By>;
+  createdAt?: Maybe<Order_By>;
   email?: Maybe<Order_By>;
-  first_name?: Maybe<Order_By>;
+  firstName?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
-  last_name?: Maybe<Order_By>;
+  lastName?: Maybe<Order_By>;
   messages_aggregate?: Maybe<Relation_Channel_User_Messages_Aggregate_Order_By>;
   subscriptions_aggregate?: Maybe<Subscriptions_Aggregate_Order_By>;
-  updated_at?: Maybe<Order_By>;
+  updatedAt?: Maybe<Order_By>;
   username?: Maybe<Order_By>;
 };
 
@@ -2081,12 +2081,12 @@ export type Users_Pk_Columns_Input = {
 
 /** input type for updating data in table "users" */
 export type Users_Set_Input = {
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   email?: Maybe<Scalars['String']>;
-  first_name?: Maybe<Scalars['String']>;
+  firstName?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
-  last_name?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  lastName?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   username?: Maybe<Scalars['String']>;
 };
 
@@ -2112,8 +2112,28 @@ export type ListChannelsQuery = (
   { __typename?: 'query_root' }
   & { channels: Array<(
     { __typename?: 'channels' }
-    & Pick<Channels, 'name' | 'description' | 'id'>
-    & { updatedAt: Channels['updated_at'] }
+    & Pick<Channels, 'name' | 'description' | 'id' | 'updatedAt'>
+  )> }
+);
+
+export type FindChannelQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type FindChannelQuery = (
+  { __typename?: 'query_root' }
+  & { channel?: Maybe<(
+    { __typename?: 'channels' }
+    & Pick<Channels, 'id' | 'name' | 'updatedAt'>
+    & { messages: Array<(
+      { __typename?: 'relation_channel_user_messages' }
+      & Pick<Relation_Channel_User_Messages, 'id' | 'content' | 'createdAt'>
+      & { user?: Maybe<(
+        { __typename?: 'users' }
+        & Pick<Users, 'firstName' | 'lastName' | 'username'>
+      )> }
+    )> }
   )> }
 );
 
@@ -2124,8 +2144,7 @@ export type ListUsersQuery = (
   { __typename?: 'query_root' }
   & { users: Array<(
     { __typename?: 'users' }
-    & Pick<Users, 'username' | 'id'>
-    & { firstName: Users['first_name'], lastName: Users['last_name'], updatedAt: Users['updated_at'] }
+    & Pick<Users, 'id' | 'firstName' | 'lastName' | 'username' | 'updatedAt'>
   )> }
 );
 
@@ -2136,7 +2155,7 @@ export const ListChannelsDocument = gql`
     name
     description
     id
-    updatedAt: updated_at
+    updatedAt
   }
 }
     `;
@@ -2160,14 +2179,54 @@ export function useListChannelsQuery(options: VueApolloComposable.UseQueryOption
             return VueApolloComposable.useQuery<ListChannelsQuery, undefined>(ListChannelsDocument, undefined, options);
           }
 export type ListChannelsQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<ListChannelsQuery, ListChannelsQueryVariables>;
+export const FindChannelDocument = gql`
+    query findChannel($id: uuid!) {
+  channel: channels_by_pk(id: $id) {
+    id
+    name
+    updatedAt
+    messages {
+      id
+      content
+      createdAt
+      user {
+        firstName
+        lastName
+        username
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useFindChannelQuery__
+ *
+ * To run a query within a Vue component, call `useFindChannelQuery` and pass it any options that fit your needs.
+ * When your component renders, `useFindChannelQuery` returns an object from Apollo Client that contains result, loading and error properties
+ * you can use to render your UI.
+ *
+ * @param options that will be passed into the query, supported options are listed on: https://v4.apollo.vuejs.org/guide-composable/query.html#options;
+ *
+ * @example
+ * const { result, loading, error } = useFindChannelQuery(
+ *   {
+ *      id: // value for 'id'
+ *   }
+ * );
+ */
+export function useFindChannelQuery(variables: FindChannelQueryVariables | VueCompositionApi.Ref<FindChannelQueryVariables> | ReactiveFunction<FindChannelQueryVariables>, options: VueApolloComposable.UseQueryOptions<FindChannelQuery, FindChannelQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<FindChannelQuery, FindChannelQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<FindChannelQuery, FindChannelQueryVariables>> = {}) {
+            return VueApolloComposable.useQuery<FindChannelQuery, FindChannelQueryVariables>(FindChannelDocument, variables, options);
+          }
+export type FindChannelQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<FindChannelQuery, FindChannelQueryVariables>;
 export const ListUsersDocument = gql`
     query listUsers {
   users {
-    firstName: first_name
-    lastName: last_name
-    username
     id
-    updatedAt: updated_at
+    firstName
+    lastName
+    username
+    updatedAt
   }
 }
     `;

@@ -1,6 +1,11 @@
 - table:
     schema: public
     name: channels
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      updated_at: updatedAt
+      created_at: createdAt
   array_relationships:
   - name: messages
     using:
@@ -28,6 +33,12 @@
 - table:
     schema: public
     name: messages
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      subscription_id: subscriptionId
+      updated_at: updatedAt
+      created_at: createdAt
   object_relationships:
   - name: subscription
     using:
@@ -35,6 +46,14 @@
 - table:
     schema: public
     name: relation_channel_user_messages
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      subscription_id: subscriptionId
+      updated_at: updatedAt
+      created_at: createdAt
+      user_id: userId
+      channel_id: channelId
   object_relationships:
   - name: channel
     using:
@@ -55,6 +74,12 @@
 - table:
     schema: public
     name: relation_channel_users
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      updated_at: updatedAt
+      created_at: createdAt
+      channel_id: channelId
   array_relationships:
   - name: channels
     using:
@@ -67,6 +92,12 @@
 - table:
     schema: public
     name: relation_user_channels
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      updated_at: updatedAt
+      created_at: createdAt
+      user_id: userId
   array_relationships:
   - name: users
     using:
@@ -79,6 +110,12 @@
 - table:
     schema: public
     name: subscriptions
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      created_at: createdAt
+      user_id: userId
+      channel_id: channelId
   object_relationships:
   - name: channel
     using:
@@ -97,6 +134,13 @@
 - table:
     schema: public
     name: users
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      first_name: firstName
+      updated_at: updatedAt
+      last_name: lastName
+      created_at: createdAt
   array_relationships:
   - name: channels
     using:

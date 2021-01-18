@@ -1,0 +1,288 @@
+{
+  "version": 2,
+  "tables": [
+    {
+      "table": {
+        "schema": "public",
+        "name": "channels"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "created_at": "createdAt",
+          "updated_at": "updatedAt"
+        }
+      },
+      "array_relationships": [
+        {
+          "name": "messages",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "relation_channel_user_messages"
+              },
+              "column_mapping": {
+                "id": "channel_id"
+              }
+            }
+          }
+        },
+        {
+          "name": "subscriptions",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "channel_id",
+              "table": {
+                "schema": "public",
+                "name": "subscriptions"
+              }
+            }
+          }
+        },
+        {
+          "name": "users",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "relation_channel_users"
+              },
+              "column_mapping": {
+                "id": "channel_id"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "messages"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "created_at": "createdAt",
+          "updated_at": "updatedAt",
+          "subscription_id": "subscriptionId"
+        }
+      },
+      "object_relationships": [
+        {
+          "name": "subscription",
+          "using": {
+            "foreign_key_constraint_on": "subscription_id"
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "relation_channel_user_messages"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "created_at": "createdAt",
+          "updated_at": "updatedAt",
+          "subscription_id": "subscriptionId",
+          "channel_id": "channelId",
+          "user_id": "userId"
+
+        }
+      },
+      "object_relationships": [
+        {
+          "name": "channel",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "channels"
+              },
+              "column_mapping": {
+                "channel_id": "id"
+              }
+            }
+          }
+        },
+        {
+          "name": "user",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "users"
+              },
+              "column_mapping": {
+                "user_id": "id"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "relation_channel_users"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "created_at": "createdAt",
+          "updated_at": "updatedAt",
+          "channel_id": "channelId"
+        }
+      },
+      "array_relationships": [
+        {
+          "name": "channels",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "relation_user_channels"
+              },
+              "column_mapping": {
+                "id": "user_id"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "relation_user_channels"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "created_at": "createdAt",
+          "updated_at": "updatedAt",
+          "user_id": "userId"
+        }
+      },
+      "array_relationships": [
+        {
+          "name": "users",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "relation_channel_users"
+              },
+              "column_mapping": {
+                "id": "channel_id"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "subscriptions"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "created_at": "createdAt",
+          "channel_id": "channelId",
+          "user_id": "userId"
+        }
+      },
+      "object_relationships": [
+        {
+          "name": "channel",
+          "using": {
+            "foreign_key_constraint_on": "channel_id"
+          }
+        },
+        {
+          "name": "user",
+          "using": {
+            "foreign_key_constraint_on": "user_id"
+          }
+        }
+      ],
+      "array_relationships": [
+        {
+          "name": "messages",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "subscription_id",
+              "table": {
+                "schema": "public",
+                "name": "messages"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "users"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "created_at": "createdAt",
+          "updated_at": "updatedAt",
+          "first_name": "firstName",
+          "last_name": "lastName"
+        }
+      },
+      "array_relationships": [
+        {
+          "name": "channels",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "relation_user_channels"
+              },
+              "column_mapping": {
+                "id": "user_id"
+              }
+            }
+          }
+        },
+        {
+          "name": "messages",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "relation_channel_user_messages"
+              },
+              "column_mapping": {
+                "id": "user_id"
+              }
+            }
+          }
+        },
+        {
+          "name": "subscriptions",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "user_id",
+              "table": {
+                "schema": "public",
+                "name": "subscriptions"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

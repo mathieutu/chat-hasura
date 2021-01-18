@@ -8,9 +8,9 @@ index 6060e4a..15ce2b7 100644
           */
 -        compact<T>(list: T[]): Array<NonNullable<T>>;
 +        compact<T>(list: T[]): Array<Exclude<NonNullable<T>, false | '' | 0>>;
-+        compact<T extends object>(record: T): { 
-+          [K in keyof T]: Exclude<NonNullable<T[K]>, false | '' | 0> 
++        compact<T extends object>(record: T): {
++          [K in keyof T]: Exclude<NonNullable<T[K]>, false | '' | 0>
 +        };
-         
+
          /**
           * Returns a new list containing the contents of the given list, followed by the given

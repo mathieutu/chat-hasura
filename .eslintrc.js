@@ -9,7 +9,7 @@ module.exports = {
     '@vue/typescript/recommended',
   ],
   plugins: [
-    // 'graphql',
+    'graphql',
   ],
   parserOptions: {
     ecmaVersion: 2020,
@@ -24,8 +24,9 @@ module.exports = {
       singleline: 3, multiline: { max: 1, allowFirstLine: false },
     }],
     'vue/custom-event-name-casing': 'off',
+    'no-return-assign': 'off',
     'vue/attribute-hyphenation': ['error', 'never'],
-    'object-curly-newline': ["error", { "multiline": true }],
-    // 'graphql/template-strings': ['error', { env: 'literal' }],
+    'object-curly-newline': ['error', { consistent: true }],
+    'graphql/template-strings': ['error', { env: 'literal' }],
   },
 }

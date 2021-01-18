@@ -1,41 +1,47 @@
 <template>
   <div class="flex justify-center overflow-y-scroll">
     <div class="flex flex-col w-full max-w-xl px-3 py-2">
-      <ChatEvent message="Channel was created" />
-      <ChatEvent message="8 Mai" />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatEvent message="Hier" />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatMessage message="last one" right />
-      <ChatMessage message="Use the buttons above the editor to test on them" />
-      <ChatMessage message="Another message" />
-      <ChatEvent message="Aujourd'hui" />
-      <ChatMessage message="last one" right />
-      <ChatEvent message="Un event de base" />
+      <ChatEvent content="Channel was created" />
+      <ChatEvent content="8 Mai" />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatEvent content="Hier" />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatMessage content="last one" right />
+      <ChatMessage content="Use the buttons above the editor to test on them" />
+      <ChatMessage content="Another message" />
+      <ChatEvent content="Aujourd'hui" />
+      <ChatMessage content="last one" right />
+      <ChatEvent content="Un event de base" />
+      <ChatMessage
+        v-for="message in messages"
+        :key="message.id"
+        v-bind="message"
+        right
+      />
     </div>
   </div>
 </template>
@@ -46,5 +52,11 @@ import ChatMessage from '@/components/ChatMessage.vue'
 export default {
   name: 'ChatMessages',
   components: { ChatEvent, ChatMessage },
+  props: {
+    messages: {
+      type: Array,
+      required: true,
+    },
+  },
 }
 </script>
