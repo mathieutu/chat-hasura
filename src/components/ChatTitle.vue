@@ -8,7 +8,7 @@
       <div class="overflow-hidden text-base font-medium leading-tight text-gray-600 whitespace-no-wrap">
         Karen
       </div>
-      <div class="overflow-hidden text-sm font-medium leading-tight text-gray-600 whitespace-no-wrap">
+      <div class="text-sm font-medium leading-tight text-gray-600 whitespace-no-wrap">
         Online
       </div>
     </div>

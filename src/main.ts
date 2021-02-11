@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 const apolloClient = new ApolloClient({
-  uri: 'http://localhost:8081/v1/graphql',
+  uri: 'https://chat-test.hasura.app/v1/graphql',
 })
 
 // @ts-ignore

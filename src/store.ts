@@ -1,14 +1,15 @@
 import { inject, InjectionKey, provide, readonly, ref } from 'vue'
-import { useToggle } from '@/hooks'
+import { useState, useToggle } from '@/hooks'
 
 const createStore = () => {
   const [sideBarIsShown, toggleSideBar] = useToggle(true)
-  const selectedChannel = ref<string>()
+  const [currentChannel, selectChannel] = useState<string>(null)
 
   return {
     toggleSideBar,
     sideBarIsShown: readonly(sideBarIsShown),
-    selectedChannel,
+    currentChannel,
+    selectChannel,
   }
 }
 

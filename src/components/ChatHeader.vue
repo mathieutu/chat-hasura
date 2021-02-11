@@ -1,8 +1,8 @@
 <template>
-  <div class="z-20 flex flex-grow-0 flex-shrink-0 w-full px-3 bg-white border-b justify-between items-center">
-    <MenuButton v-if="!sideBarIsShown" @click="toggleSideBar" />
+  <div class="z-20 flex flex-grow-0 flex-shrink-0 w-full px-3 bg-white border-b items-center">
+    <MenuButton @click="toggleSideBar" />
 
-    <ChatTitle />
+    <ChatTitle class="flex-grow" />
     <div class="flex">
       <PinnedMessage v-if="false" />
       <ChatActions />

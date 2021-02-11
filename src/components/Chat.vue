@@ -19,8 +19,8 @@ export default defineComponent({
   name: 'Chat',
   components: { ChatNewMessageInput, ChatMessages, ChatHeader },
   setup() {
-    const { selectedChannel } = useStore()
-    const { result, loading } = useFindChannelQuery(() => ({ id: selectedChannel.value || '' }))
+    const { currentChannel } = useStore()
+    const { result, loading } = useFindChannelQuery(() => ({ id: currentChannel.value || '' }))
 
     const messages = computed(() => result.value?.channel?.messages.map(({ id, content, createdAt }) => ({
       id,

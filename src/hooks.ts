@@ -1,10 +1,17 @@
-import { onMounted, ref, Ref, watch, watchEffect } from 'vue'
+import { onMounted, readonly, ref, Ref, UnwrapRef, watch, watchEffect } from 'vue'
 
 export const useToggle = (initial = false) => {
   const bool = ref(initial)
   const toggle = (value?: boolean) => bool.value = value ?? !bool.value
 
   return [bool, toggle] as const
+}
+
+export const useState = <T>(initial: T | null | undefined) => {
+  const state = ref(initial)
+  const setState = (value: UnwrapRef<T>) => state.value = value
+
+  return [readonly(state), setState] as const
 }
 
 export const resizeTextAreaDependingOfContent = (content: Ref<string>, maxRows: number) => {

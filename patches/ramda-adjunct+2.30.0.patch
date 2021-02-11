@@ -1,16 +1,14 @@
 diff --git a/node_modules/ramda-adjunct/types/index.d.ts b/node_modules/ramda-adjunct/types/index.d.ts
-index 6060e4a..15ce2b7 100644
+index 910ff03..99335c0 100644
 --- a/node_modules/ramda-adjunct/types/index.d.ts
 +++ b/node_modules/ramda-adjunct/types/index.d.ts
-@@ -1181,7 +1181,10 @@ declare namespace RamdaAdjunct {
-          * Creates an array with all falsy values removed.
+@@ -1223,6 +1223,9 @@ declare namespace RamdaAdjunct {
           * The values false, null, 0, "", undefined, and NaN are falsy.
           */
--        compact<T>(list: T[]): Array<NonNullable<T>>;
-+        compact<T>(list: T[]): Array<Exclude<NonNullable<T>, false | '' | 0>>;
+         compact<T>(list: T[]): Array<Exclude<NonNullable<T>, false | '' | 0>>;
 +        compact<T extends object>(record: T): {
 +          [K in keyof T]: Exclude<NonNullable<T[K]>, false | '' | 0>
 +        };
-
+ 
          /**
           * Returns a new list containing the contents of the given list, followed by the given

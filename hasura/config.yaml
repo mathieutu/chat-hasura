@@ -1,5 +1,5 @@
 version: 2
-endpoint: http://localhost:8081
+endpoint: https://chat-test.hasura.app
 metadata_directory: metadata
 actions:
   kind: synchronous
